@@ -33,6 +33,11 @@ function scrollFunction(){
 		homeSection.classList.remove('active');
 	}
 }
+
+document.getElementById('downloadBtn').addEventListener('click', function() {
+	// Trigger the download link when the button is clicked
+	document.getElementById('downloadLink').click();
+});
 // Home Section Ends 
 
 // Portfolio Section Starts
@@ -84,3 +89,25 @@ $('.testimonials-container').owlCarousel({
         }
     }
 })
+document.querySelector('.form-2').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(this); // Create a FormData object from the form
+
+    // Send the form data using fetch API
+    fetch(this.action, {
+        method: this.method,
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Handle success response
+        console.log('Success:', data);
+        alert('Your message has been sent!');
+    })
+    .catch((error) => {
+        // Handle error response
+        console.error('Error:', error);
+        alert('There was an error sending your message.');
+    });
+});

@@ -218,6 +218,11 @@ button.contact-btn{
 	top: -220px;
 	overflow: hidden;
 	z-index: 0;
+.hero.hero-image.responsive-image {
+		width: 100%; /* Make the image take the full width of its container */
+		height: auto; /* Maintain aspect ratio */
+		max-width: 450px; /* Set a maximum width */	
+}
 }
 .hero .hero-image img{
 	position: absolute;
